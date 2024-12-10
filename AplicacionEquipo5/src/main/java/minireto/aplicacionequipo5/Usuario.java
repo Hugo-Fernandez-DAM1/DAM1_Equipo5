@@ -4,7 +4,9 @@
  */
 package minireto.aplicacionequipo5;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 
 /**
  *
@@ -15,20 +17,11 @@ public class Usuario {
     private String email;
     private String nombre;
     private String apellidos;
-    private Date fechaNac;
+    private LocalDate fechaNac;
     private String telefono;
     private String genero;
     private String provincia;
 
-    public Usuario(String email, String nombre, String apellidos, Date fechaNac, String telefono, String genero, String provincia) {
-        this.email = email;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.fechaNac = fechaNac;
-        this.telefono = telefono;
-        this.genero = genero;
-        this.provincia = provincia;
-    }
 
     public Usuario(String email, String nombre, String apellidos, Date fechaNac) {
         this.email = email;
@@ -37,23 +30,21 @@ public class Usuario {
         this.fechaNac = fechaNac;
     }
 
-    public Usuario(String email, String nombre, String apellidos, Date fechaNac, String telefono) {
-        this.email = email;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.fechaNac = fechaNac;
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
-    public Usuario(String email, String nombre, String apellidos, Date fechaNac, String telefono, String genero) {
-        this.email = email;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.fechaNac = fechaNac;
-        this.telefono = telefono;
+    public void setGenero(String genero) {
         this.genero = genero;
     }
-    
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+ public void registrarReto(String nombre,Usuario usuario,LocalDateTime fecha,int tipoActividad,int distancia){
+     
+ }
     
     
     
