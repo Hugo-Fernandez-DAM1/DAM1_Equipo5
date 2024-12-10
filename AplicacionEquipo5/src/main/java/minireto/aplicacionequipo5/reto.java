@@ -3,17 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package minireto.aplicacionequipo5;
-import java.util.Date;
+import enums.Dificultad;
+import enums.Actividades;
+import java.time.LocalDateTime;
 /**
  *
  * @author Mario Cuevas
  */
-public class reto {
+public class Reto {
     private String nomReto;
-    private String usuarioCreador;
-    private Date fechaHora;
+    private Usuario usuarioCreador;
+    private LocalDateTime fechaHora;
     private Actividades tipoActividad;
-    private double distancia;
+    private int distancia;
     private Dificultad dificultad;
     
     //OPCIONALES
@@ -24,7 +26,7 @@ public class reto {
 
     
     //CONSTRUCTOR PARA LOS OBLIGATORIOS
-    public reto(String nomReto, String nomUsuario, Date fechaHora, Actividades tipoActividad, double distancia, Dificultad dificultad) {
+    public Reto(String nomReto, Usuario nomUsuario, LocalDateTime fechaHora, Actividades tipoActividad, int distancia, Dificultad dificultad) {
         
         //Atributos obligatorios
         this.nomReto = nomReto;
