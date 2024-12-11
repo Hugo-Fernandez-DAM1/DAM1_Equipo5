@@ -37,7 +37,7 @@ public class Usuario {
 
 
 
-    public Usuario(String email, String nombre, String apellidos, Date fechaNac) {
+    public Usuario(String email, String nombre, String apellidos, LocalDate fechaNac) {
         this.email = email;
         this.nombre = nombre;
         this.apellidos = apellidos;
