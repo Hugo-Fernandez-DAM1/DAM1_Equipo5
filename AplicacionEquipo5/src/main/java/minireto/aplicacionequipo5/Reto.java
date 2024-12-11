@@ -72,5 +72,23 @@ public class Reto {
             System.out.println("Índice fuera de rango.");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Reto{" + "nomReto=" + nomReto 
+                + "\n, usuarioCreador=" + usuarioCreador 
+                + "\n, fechaHora=" + fechaHora 
+                + "\n, tipoActividad=" + tipoActividad 
+                + "\n, distancia=" + distancia 
+                + "\n, dificultad=" + dificultad 
+                + "\n, numWP=" + numWP 
+                + "\n, waypoints=" + waypoints 
+                + "\n, desnivelNeg=" + desnivelNeg 
+                + "\n, desnivelPos=" + desnivelPos 
+                + "\n, periodo=" + periodo 
+                + "\n, comentario=" + comentario + '}';
+    }
+    
+    
     
 }
