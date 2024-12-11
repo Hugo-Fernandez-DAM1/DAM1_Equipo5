@@ -28,7 +28,7 @@ public class Reto {
 
     
     //CONSTRUCTOR PARA LOS OBLIGATORIOS
-    public Reto(String nomReto, Usuario nomUsuario, LocalDateTime fechaHora, Actividades tipoActividad, int distancia, Dificultad dificultad, int numWP) {
+    public Reto(String nomReto, Usuario nomUsuario, LocalDateTime fechaHora, Actividades tipoActividad, int distancia, Dificultad dificultad,int numWP) {
         
         //Atributos obligatorios
         this.nomReto = nomReto;

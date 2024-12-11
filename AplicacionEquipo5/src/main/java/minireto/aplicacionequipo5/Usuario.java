@@ -75,7 +75,9 @@ public class Usuario {
         int distancia= new Scanner(System.in).nextInt();
         Dificultad dificultad=elegirDificultad();
         Arrays.copyOf(this.retosCreados,this.retosCreados.length+1);
-        retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad);
+        System.out.print("Numero de Waypoints: ");
+        int numWP= new Scanner(System.in).nextInt();
+        retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,int numWP);
         
     }
     
