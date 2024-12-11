@@ -4,11 +4,11 @@
  */
 package minireto.aplicacionequipo5;
 
-<<<<<<< HEAD
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-=======
+
 import enums.Actividades;
 import enums.Dificultad;
 import java.time.LocalDateTime;
@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
->>>>>>> c0422623aba8a00f1e6eeb84a281f357261cfa79
+
 
 /**
  *
@@ -35,10 +35,7 @@ public class Usuario {
     private RetoRealizado[] retosRealizados;
     private Reto[] retosCreados;
 
-<<<<<<< HEAD
-=======
-    
->>>>>>> c0422623aba8a00f1e6eeb84a281f357261cfa79
+
 
     public Usuario(String email, String nombre, String apellidos, Date fechaNac) {
         this.email = email;
@@ -49,7 +46,7 @@ public class Usuario {
         this.retosCreados = new Reto[0];
     }
 
-<<<<<<< HEAD
+
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
@@ -65,7 +62,7 @@ public class Usuario {
  public void registrarReto(String nombre,Usuario usuario,LocalDateTime fecha,int tipoActividad,int distancia){
      
  }
-=======
+
     public void crearReto(){
         System.out.print("Nombre del reto: ");
         String nombre= new Scanner(System.in).next();
@@ -174,7 +171,12 @@ public class Usuario {
         }while(opcion<0 && opcion>5);
         return dificultad;
     }
->>>>>>> c0422623aba8a00f1e6eeb84a281f357261cfa79
+
+
+    public void realizaReto(){
+        
+    }
+
     
     
     
