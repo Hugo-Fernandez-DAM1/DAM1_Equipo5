@@ -2,19 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package minireto.aplicacionequipo5;
+package com.mycompany.perfil;
 
 /**
  *
- * @author DAM119
+ * @author DAM105
  */
-public class AplicacionEquipo5 {
+public class Perfil {
 
     public static void main(String[] args) {
-
-        System.out.println("Hey");
-                
-
+        System.out.println("Hello World!");
     }
-     
 }
