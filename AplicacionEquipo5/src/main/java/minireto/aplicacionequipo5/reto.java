@@ -3,21 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package minireto.aplicacionequipo5;
-import enums.Dificultad;
-import enums.Actividades;
-import java.time.LocalDateTime;
+import java.util.Date;
 /**
  *
  * @author Mario Cuevas
  */
-public class Reto {
+public class reto {
     private String nomReto;
-    private Usuario usuarioCreador;
-    private LocalDateTime fechaHora;
+    private String usuarioCreador;
+    private Date fechaHora;
     private Actividades tipoActividad;
-    private int distancia;
+    private double distancia;
     private Dificultad dificultad;
-    private WayPoints waypoints[];
     
     //OPCIONALES
     private int desnivelNeg;
@@ -27,7 +24,7 @@ public class Reto {
 
     
     //CONSTRUCTOR PARA LOS OBLIGATORIOS
-    public Reto(String nomReto, Usuario nomUsuario, LocalDateTime fechaHora, Actividades tipoActividad, int distancia, Dificultad dificultad) {
+    public reto(String nomReto, String nomUsuario, Date fechaHora, Actividades tipoActividad, double distancia, Dificultad dificultad) {
         
         //Atributos obligatorios
         this.nomReto = nomReto;
@@ -82,20 +79,8 @@ public class Reto {
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
-
-    public String getNomReto() {
-        return nomReto;
-    }
     
     
-    
-    public void agregarWaypoint(Waypoints waypoint, int i) {
-        if (i >= 0 && i < waypoints.length) {
-            waypoints[i] = waypoint;
-        } else {
-            System.out.println("Índice fuera de rango.");
-        }
-    }
     
     
 }
