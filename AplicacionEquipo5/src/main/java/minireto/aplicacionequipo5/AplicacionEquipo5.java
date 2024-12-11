@@ -16,8 +16,9 @@ public class AplicacionEquipo5 {
         int num=0;
          do{
              
-             System.out.println("1.Crear usuarios\n"
-                     + "2.Registrar usuarios\n"
+             System.out.println("---Menu deporte--\n"
+                     + "1.Crear usuarios\n"
+                     + "2.Registrar retos\n"
                      + "3.Realizar retos\n"
                      + "4.Valorar retos\n"
                      + "5.Ver un reto con sus waypoints\n"
@@ -26,8 +27,8 @@ public class AplicacionEquipo5 {
                      + "8.Salir de la aplicacion");   
              switch(num){
                  
-                 case 1-> { // Hay que añadir 3 metodos más opcionales y habria que cambiar el sout de arriba 
-                     
+                 case 1-> { 
+                     new Usuario();
                  }
                  case 2-> {
                      

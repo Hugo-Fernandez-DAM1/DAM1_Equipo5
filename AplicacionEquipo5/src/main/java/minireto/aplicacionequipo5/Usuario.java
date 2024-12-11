@@ -29,7 +29,8 @@ public class Usuario {
     
     private String email;
     private String nombre;
-    private String apellidos;
+    private String apellido1;
+    private String apellido2;
     private LocalDate fechaNac;
     private String telefono;
     private String genero;
@@ -40,11 +41,22 @@ public class Usuario {
 
 
 
-    public Usuario(String email, String nombre, String apellidos, LocalDate fechaNac) {
-        this.email = email;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.fechaNac = fechaNac;
+    public Usuario() {
+        System.out.println("Inroduce el email:");
+        this.email = new Scanner(System.in).next(); 
+        System.out.println("Inroduce el nombre:");
+        this.nombre = new Scanner(System.in).next();
+        System.out.println("Inroduce el apellido1:");
+        this.apellido1 = new Scanner(System.in).next();
+        System.out.println("Inroduce el apellido2:");
+        this.apellido2 = new Scanner(System.in).next();
+        System.out.println("Inroduce el ano de nacimiento:");
+        int ano = new Scanner(System.in).nextInt();
+        System.out.println("Inroduce el mes de nacimiento:");
+        int mes = new Scanner(System.in).nextInt();
+        System.out.println("Inroduce el dia de nacimiento:");
+        int dia = new Scanner(System.in).nextInt();
+        this.fechaNac = LocalDate.of(ano,mes,dia);
         this.retosRealizados= new RetoRealizado[0];
         this.retosCreados = new Reto[0];
     }
