@@ -148,6 +148,9 @@ public class Usuario {
         }while(opcion<0 && opcion>5);
         return dificultad;
     }
+    public void realizaReto(){
+        
+    }
     
     
     
