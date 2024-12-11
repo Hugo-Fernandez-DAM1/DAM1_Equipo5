@@ -18,7 +18,7 @@ public class Reto {
     private int distancia;
     private Dificultad dificultad;
     private int numWP;
-    private WayPoints waypoints[];
+    private WayPoints[] waypoints;
     
     //OPCIONALES
     private int desnivelNeg;
@@ -41,34 +41,7 @@ public class Reto {
         
         this.waypoints=new WayPoints[this.numWP];
     
-
-        
-        /*PASAR AL PRINCIPAL DONDE CONSRUYES EL OBJETO
-        
-        System.out.println("Quieres introducir desniveles? Y/N");
-        char desnivel= t.next().toUpperCase().charAt(0);
-        if (desnivel=='Y'){
-            System.out.println("desnivel positivo:");
-            setDesnivelPos(t.nextInt());
-            System.out.println("desnivel negativo:");
-            setDesnivelNeg(t.nextInt());
-            
-        }
-        
-        System.out.println("Quieres introducir el periodo en el que se realizó? Y/N");
-        char p = t.next().toUpperCase().charAt(0);
-        if (p=='Y'){
-            System.out.println("A continuación introduce el periodo:");
-            setPeriodo(t.nextLine());
-        }
-        
-        System.out.println("Quieres introducir un comentario acerca del reto? Y/N");
-        char comment = t.next().toUpperCase().charAt(0);
-        if (comment=='Y'){
-            System.out.println("A continuacion introduce el comentario");
-            setComentario(t.nextLine());
-        }
-        */
+   
     }
 
     public void setDesnivelNeg(Integer desnivelNeg) {
