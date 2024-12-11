@@ -13,23 +13,21 @@ public class WayPoints {
     private int id;
     private Reto reto;
     private int NumeroWaypoint;
-    private int distanciaInicio;
+    private int distanciaDesdeInicio;
     private String tipo;
     private String nombre;
     private int latitud;
     private int longitud;
-    private String foto;
 
     public WayPoints(int id, Reto reto, int NumeroWaypoint, int distanciaInicio, String tipo, String nombre, int latitud, int longitud, String foto) {
         this.id = id;
         this.reto = reto;
         this.NumeroWaypoint = NumeroWaypoint;
-        this.distanciaInicio = distanciaInicio;
+        this.distanciaDesdeInicio = distanciaInicio;
         this.tipo = tipo;
         this.nombre = nombre;
         this.latitud = latitud;
         this.longitud = longitud;
-        this.foto = foto;
     }
 
     public int getId() {
