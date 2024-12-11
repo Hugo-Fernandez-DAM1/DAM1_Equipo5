@@ -11,7 +11,10 @@ package minireto.aplicacionequipo5;
 public class AplicacionEquipo5 {
 
     public static void main(String[] args) {
+
         System.out.println("Hey");
                 
+
     }
+     
 }
