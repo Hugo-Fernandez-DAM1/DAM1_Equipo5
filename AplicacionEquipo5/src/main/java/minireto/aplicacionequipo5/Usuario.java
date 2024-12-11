@@ -76,7 +76,7 @@ public class Usuario {
 
 
 
-    public void crearReto(){
+    public Reto crearReto(){
         System.out.print("Nombre del reto: ");
         String nombre= new Scanner(System.in).next();
         Usuario creador= Usuario.this;
@@ -88,12 +88,8 @@ public class Usuario {
         System.out.print("Numero de Waypoints: ");
         int numWP= new Scanner(System.in).nextInt();
 
-        Arrays.copyOf(this.retosCreados,this.retosCreados.length+1);
+        retosCreados=Arrays.copyOf(this.retosCreados,this.retosCreados.length+1);
         retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,numWP);
-        realizaReto(retosCreados[this.retosCreados.length-1]);
-
-        
-
         
         System.out.println("Quieres introducir desniveles? Y/N");
         char desnivel= new Scanner(System.in).next().toUpperCase().charAt(0);
@@ -117,6 +113,8 @@ public class Usuario {
             System.out.println("A continuacion introduce el comentario");
             retosCreados[this.retosCreados.length-1].setComentario(new Scanner(System.in).nextLine());
         }
+        realizaReto(retosCreados[this.retosCreados.length-1]);
+        return retosCreados[this.retosCreados.length-1];
     }
     
     public Actividades elegirActividad(){
@@ -261,21 +259,21 @@ public class Usuario {
             System.out.println("introduce un numero positivo");
         }
         }
-        Arrays.copyOf(this.retosRealizados,this.retosRealizados.length+1);
+        retosRealizados=Arrays.copyOf(this.retosRealizados,this.retosRealizados.length+1);
         retosRealizados[this.retosRealizados.length-1]= new RetoRealizado(reto,fInicio,fFinal,tiempoMov,velMedia);
         
     }
     public LocalDateTime formatoFecha(){
         
-        DateTimeFormatter f =DateTimeFormatter.ofPattern("dd-MM-yyyy a las hh:mm:ss");
-        LocalDateTime a =LocalDateTime.parse(String.valueOf(LocalDateTime.now()),f);
+        DateTimeFormatter f =DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy 'a las' hh:mm:ss\"");
+        LocalDateTime a =LocalDateTime.parse(LocalDateTime.now().format(f));
+        
         return a;
     }
     public LocalDateTime formatoFecha(int dia,int mes ,int ano,int hora,int min,int seg){
-        
         DateTimeFormatter f =DateTimeFormatter.ofPattern("dd-MM-yyyy a las hh:mm:ss");
         LocalDateTime fecha = LocalDateTime.of(seg, min, min, hora, min, seg);
-        LocalDateTime a =LocalDateTime.parse(String.valueOf(LocalDateTime.of(seg, min, min, hora, min, seg)),f);
+        LocalDateTime a =LocalDateTime.parse(LocalDateTime.of(seg, min, min, hora, min, seg).format(f));
         return a;
     }
 
@@ -288,7 +286,7 @@ public class Usuario {
                 System.out.println("numero incorrecto");
             }
         }
-        Arrays.copyOf(this.retosValorados,this.retosValorados.length+1);
+        retosValorados=Arrays.copyOf(this.retosValorados,this.retosValorados.length+1);
         retosValorados[this.retosValorados.length-1]= new ValoracionDelReto(reto,valoracion);
     }
 
