@@ -10,13 +10,13 @@ import java.time.LocalDateTime;
  *
  * @author Mario Cuevas
  */
-public class retoRealizado {
+public class RetoRealizado {
     private LocalDateTime fInicio;
     private LocalDateTime fFinal;
     private int tiempoEnMovimiento;
     private String comentarios;
 
-    public retoRealizado(LocalDateTime fInicio, LocalDateTime fFinal, int tiempoEnMovimiento) {
+    public RetoRealizado(LocalDateTime fInicio, LocalDateTime fFinal, int tiempoEnMovimiento) {
         this.fInicio = fInicio;
         this.fFinal = fFinal;
         this.tiempoEnMovimiento = tiempoEnMovimiento;
