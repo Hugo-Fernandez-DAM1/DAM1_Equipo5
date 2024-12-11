@@ -13,13 +13,13 @@ import java.time.LocalDateTime;
 public class retoRealizado {
     private LocalDateTime fInicio;
     private LocalDateTime fFinal;
-    private int tiempoEnMovimientoMinutos;
+    private int tiempoEnMovimiento;
     private String comentarios;
 
     public retoRealizado(LocalDateTime fInicio, LocalDateTime fFinal, int tiempoEnMovimiento) {
         this.fInicio = fInicio;
         this.fFinal = fFinal;
-        this.tiempoEnMovimientoMinutos = tiempoEnMovimiento;
+        this.tiempoEnMovimiento = tiempoEnMovimiento;
         
         //AÑADIR EN EL PRINCIPAL PEDIR COMENTARIOS OPCIONALES
     }
