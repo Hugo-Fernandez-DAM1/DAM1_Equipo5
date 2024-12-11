@@ -14,12 +14,14 @@ public class RetoRealizado {
     private LocalDateTime fInicio;
     private LocalDateTime fFinal;
     private int tiempoEnMovimiento;
+    private int velMedia;
     private String comentarios;
 
-    public RetoRealizado(LocalDateTime fInicio, LocalDateTime fFinal, int tiempoEnMovimiento) {
+    public RetoRealizado(LocalDateTime fInicio, LocalDateTime fFinal, int tiempoEnMovimiento,int velMedia) {
         this.fInicio = fInicio;
         this.fFinal = fFinal;
         this.tiempoEnMovimiento = tiempoEnMovimiento;
+        this.velMedia= velMedia;
         
         //AÑADIR EN EL PRINCIPAL PEDIR COMENTARIOS OPCIONALES
     }
