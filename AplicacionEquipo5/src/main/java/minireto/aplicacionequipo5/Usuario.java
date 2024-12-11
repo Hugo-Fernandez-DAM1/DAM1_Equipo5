@@ -77,10 +77,36 @@ public class Usuario {
         Dificultad dificultad=elegirDificultad();
         System.out.print("Numero de Waypoints: ");
         int numWP= new Scanner(System.in).nextInt();
+<<<<<<< HEAD
         Arrays.copyOf(this.retosCreados,this.retosCreados.length+1);
         retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,numWP);
         realizaReto(retosCreados[this.retosCreados.length-1]);
+=======
+        retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,numWP);
+>>>>>>> 958758b4fd980c9d349728375b36024d6d98aec5
         
+        System.out.println("Quieres introducir desniveles? Y/N");
+        char desnivel= new Scanner(System.in).next().toUpperCase().charAt(0);
+        if (desnivel=='Y'){
+            System.out.println("desnivel positivo:");
+            retosCreados[this.retosCreados.length-1].setDesnivelPos(new Scanner(System.in).nextInt());
+            System.out.println("desnivel negativo:");
+            retosCreados[this.retosCreados.length-1].setDesnivelNeg(new Scanner(System.in).nextInt());          
+        }
+        
+        System.out.println("Quieres introducir el periodo en el que se realizó? Y/N");
+        char p = new Scanner(System.in).next().toUpperCase().charAt(0);
+        if (p=='Y'){
+            System.out.println("A continuación introduce el periodo:");
+            retosCreados[this.retosCreados.length-1].setPeriodo(new Scanner(System.in).nextLine());
+        }
+        
+        System.out.println("Quieres introducir un comentario acerca del reto? Y/N");
+        char comment = new Scanner(System.in).next().toUpperCase().charAt(0);
+        if (comment=='Y'){
+            System.out.println("A continuacion introduce el comentario");
+            retosCreados[this.retosCreados.length-1].setComentario(new Scanner(System.in).nextLine());
+        }
     }
     
     public Actividades elegirActividad(){
