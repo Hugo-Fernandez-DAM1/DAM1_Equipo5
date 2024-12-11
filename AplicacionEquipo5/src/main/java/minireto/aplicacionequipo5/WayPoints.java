@@ -10,7 +10,7 @@ package minireto.aplicacionequipo5;
  */
 public class WayPoints {
     
-    private int id;
+    
     private Reto reto;
     private int NumeroWaypoint;
     private int distanciaDesdeInicio;
@@ -20,7 +20,7 @@ public class WayPoints {
     private int longitud;
 
     public WayPoints(int id, Reto reto, int NumeroWaypoint, int distanciaInicio, String tipo, String nombre, int latitud, int longitud, String foto) {
-        this.id = id;
+        
         this.reto = reto;
         this.NumeroWaypoint = NumeroWaypoint;
         this.distanciaDesdeInicio = distanciaInicio;
@@ -30,69 +30,6 @@ public class WayPoints {
         this.longitud = longitud;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public Reto getReto() {
-        return reto;
-    }
-
-    public int getNumeroWaypoint() {
-        return NumeroWaypoint;
-    }
-
-    public int getDistanciaInicio() {
-        return distanciaDesdeInicio;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public int getLatitud() {
-        return latitud;
-    }
-
-    public int getLongitud() {
-        return longitud;
-    }
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setReto(Reto reto) {
-        this.reto = reto;
-    }
-
-    public void setNumeroWaypoint(int NumeroWaypoint) {
-        this.NumeroWaypoint = NumeroWaypoint;
-    }
-
-    public void setDistanciaInicio(int distanciaInicio) {
-        this.distanciaDesdeInicio = distanciaInicio;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setLatitud(int latitud) {
-        this.latitud = latitud;
-    }
-
-    public void setLongitud(int longitud) {
-        this.longitud = longitud;
-    }
+    
 
 }

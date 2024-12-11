@@ -77,13 +77,13 @@ public class Usuario {
         Dificultad dificultad=elegirDificultad();
         System.out.print("Numero de Waypoints: ");
         int numWP= new Scanner(System.in).nextInt();
-<<<<<<< HEAD
+
         Arrays.copyOf(this.retosCreados,this.retosCreados.length+1);
         retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,numWP);
         realizaReto(retosCreados[this.retosCreados.length-1]);
-=======
+
         retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,numWP);
->>>>>>> 958758b4fd980c9d349728375b36024d6d98aec5
+
         
         System.out.println("Quieres introducir desniveles? Y/N");
         char desnivel= new Scanner(System.in).next().toUpperCase().charAt(0);
