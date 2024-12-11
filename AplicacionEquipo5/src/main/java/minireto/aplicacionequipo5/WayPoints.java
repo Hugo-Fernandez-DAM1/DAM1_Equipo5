@@ -43,7 +43,7 @@ public class WayPoints {
     }
 
     public int getDistanciaInicio() {
-        return distanciaInicio;
+        return distanciaDesdeInicio;
     }
 
     public String getTipo() {
@@ -62,9 +62,6 @@ public class WayPoints {
         return longitud;
     }
 
-    public String getFoto() {
-        return foto;
-    }
 
     public void setId(int id) {
         this.id = id;
@@ -79,7 +76,7 @@ public class WayPoints {
     }
 
     public void setDistanciaInicio(int distanciaInicio) {
-        this.distanciaInicio = distanciaInicio;
+        this.distanciaDesdeInicio = distanciaInicio;
     }
 
     public void setTipo(String tipo) {
@@ -98,7 +95,4 @@ public class WayPoints {
         this.longitud = longitud;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
 }
