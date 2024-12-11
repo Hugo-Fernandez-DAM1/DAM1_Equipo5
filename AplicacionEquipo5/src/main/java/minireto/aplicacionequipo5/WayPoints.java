@@ -4,15 +4,16 @@
  */
 package minireto.aplicacionequipo5;
 
+import java.util.Scanner;
+
 /**
  *
  * @author DAM119
  */
 public class WayPoints {
     
-    private int id;
     private Reto reto;
-    private int NumeroWaypoint;
+    private int numeroWaypoint;
     private int distanciaInicio;
     private String tipo;
     private String nombre;
@@ -20,16 +21,22 @@ public class WayPoints {
     private int longitud;
     private String foto;
 
-    public WayPoints(int id, Reto reto, int NumeroWaypoint, int distanciaInicio, String tipo, String nombre, int latitud, int longitud, String foto) {
-        this.id = id;
+    public WayPoints(Reto reto, int numeroWayPoint) {
+        Scanner sc = new Scanner(System.in);
         this.reto = reto;
-        this.NumeroWaypoint = NumeroWaypoint;
-        this.distanciaInicio = distanciaInicio;
-        this.tipo = tipo;
-        this.nombre = nombre;
-        this.latitud = latitud;
-        this.longitud = longitud;
-        this.foto = foto;
+        this.numeroWaypoint = numeroWayPoint;
+        System.out.print("Introduce la distancia de inicio: ");
+        this.distanciaInicio = sc.nextInt();
+        System.out.print("Introduce el tipo: ");
+        this.tipo = sc.next();
+        System.out.print("Introduce el nombre: ");
+        this.nombre = sc.next();
+        System.out.print("Introduce la latitud: ");
+        this.latitud = sc.nextInt();
+        System.out.print("Introduce la longitud");
+        this.longitud = sc.nextInt();
+        System.out.print("Introduce la URL de la foto: ");
+        this.foto = sc.next();
     }
 
     public int getId() {
@@ -102,5 +109,19 @@ public class WayPoints {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+    
+    
+    
+    @Override
+    public String toString() {
+        return  + "Reto: " + this.reto + "\n"
+                + "Número del WayPoint: " + this.NumeroWaypoint + "\n"
+                + "Distancia de inicio: " + this.distanciaInicio + "\n"
+                + "Tipo: " + this.tipo + "\n"
+                + "Nombre: " + this.nombre + "\n"
+                + "Latitud: " + this.latitud + "\n"
+                + "Longitud: " + this.longitud + "\n"
+                + "Foto (URL): " + this.foto;
     }
 }

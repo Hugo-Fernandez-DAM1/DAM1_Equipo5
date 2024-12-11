@@ -4,6 +4,8 @@
  */
 package minireto.aplicacionequipo5;
 
+import java.util.Scanner;
+
 /**
  *
  * @author user
@@ -12,10 +14,14 @@ public class ValoracionDelReto {
     
     private int valoracion;
     private Reto r;
+    private Usuario u;
 
-    public ValoracionDelReto(int valoracion, Reto r) {
-        this.valoracion = valoracion;
+    public ValoracionDelReto(Reto r, Usuario u) {
+        Scanner sc = new Scanner(System.in);
         this.r = r;
+        this.u = u;
+        System.out.print("Introduce la valoración (1 - 5): ");
+        this.valoracion = sc.nextInt();
     }
 
     public int getValoracion() {
@@ -33,8 +39,19 @@ public class ValoracionDelReto {
     public void setR(Reto r) {
         this.r = r;
     }
+
+    public Usuario getU() {
+        return u;
+    }
+
+    public void setU(Usuario u) {
+        this.u = u;
+    }
     
-    public int valoracion(int v) {
-        return 0; //se sigue en clase, necesito ver el code
+    @Override
+    public String toString() {
+        return "Usuario: " + this.u + "\n"
+                + "Reto: " + this.r + "\n"
+                + "Valoración: " + this.valoracion;
     }
 }
