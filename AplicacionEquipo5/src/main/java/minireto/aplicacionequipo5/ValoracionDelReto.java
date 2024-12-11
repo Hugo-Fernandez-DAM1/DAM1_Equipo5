@@ -13,28 +13,8 @@ public class ValoracionDelReto {
     private int valoracion;
     private Reto r;
 
-    public ValoracionDelReto(int valoracion, Reto r) {
+    public ValoracionDelReto(Reto reto,int valoracion) {
         this.valoracion = valoracion;
         this.r = r;
-    }
-
-    public int getValoracion() {
-        return valoracion;
-    }
-
-    public Reto getR() {
-        return r;
-    }
-
-    public void setValoracion(int valoracion) {
-        this.valoracion = valoracion;
-    }
-
-    public void setR(Reto r) {
-        this.r = r;
-    }
-    
-    public int valoracion(int v) {
-        return 0; //se sigue en clase, necesito ver el code
     }
 }

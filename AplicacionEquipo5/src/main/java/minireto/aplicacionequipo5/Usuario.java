@@ -35,6 +35,7 @@ public class Usuario {
     private String genero;
     private String provincia;
     private RetoRealizado[] retosRealizados;
+    private ValoracionDelReto[] retosValorados;
     private Reto[] retosCreados;
 
 
@@ -74,10 +75,11 @@ public class Usuario {
         System.out.print("Distancia: ");
         int distancia= new Scanner(System.in).nextInt();
         Dificultad dificultad=elegirDificultad();
-        Arrays.copyOf(this.retosCreados,this.retosCreados.length+1);
         System.out.print("Numero de Waypoints: ");
         int numWP= new Scanner(System.in).nextInt();
-        retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,int numWP);
+        Arrays.copyOf(this.retosCreados,this.retosCreados.length+1);
+        retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,numWP);
+        realizaReto(retosCreados[this.retosCreados.length-1]);
         
     }
     
@@ -172,8 +174,13 @@ public class Usuario {
     }
 
 
-    public void realizaReto(){
-        System.out.println("introduce la fecha de inicio");
+    public void realizaReto(Reto reto){
+        LocalDateTime fInicio=LocalDateTime.now();
+        LocalDateTime fFinal=LocalDateTime.now();
+        int tiempoMov=0;
+        int velMedia=0;
+        do{
+            System.out.println("introduce la fecha de inicio");
         System.out.println("ano: ");
         int ano= new Scanner(System.in).nextInt();
         System.out.println("mes: ");
@@ -187,7 +194,7 @@ public class Usuario {
         int min= new Scanner(System.in).nextInt();
         System.out.println("Segundo: ");
         int seg= new Scanner(System.in).nextInt();
-        LocalDateTime fInicio = formatoFecha(dia,mes,ano,hora,min,seg);
+        fInicio = formatoFecha(dia,mes,ano,hora,min,seg);
         System.out.println("introduce la fecha final");
         System.out.println("ano: ");
         ano= new Scanner(System.in).nextInt();
@@ -202,12 +209,25 @@ public class Usuario {
         min= new Scanner(System.in).nextInt();
         System.out.println("Segundo: ");
         seg= new Scanner(System.in).nextInt();
-        LocalDateTime fFinal = formatoFecha(dia,mes,ano,hora,min,seg);
-        System.out.println("Tiempo en movimiento (minutos:)");
-        int tiempoMov =  new Scanner(System.in).nextInt();
-        System.out.println("Velocidad media (Km/h:):");
-        int velMedia = new Scanner(System.in).nextInt();
-        new RetoRealizado(fInicio,fFinal,tiempoMov,velMedia);
+        fFinal = formatoFecha(dia,mes,ano,hora,min,seg);
+        }while(fInicio.isBefore(fFinal));
+        while(tiempoMov<=0){
+        System.out.println("Tiempo en movimiento (minutos):");
+        tiempoMov =  new Scanner(System.in).nextInt();
+        if(tiempoMov<=0){
+            System.out.println("introduce un numero positivo");
+        }
+        }
+        while(velMedia<=0){
+        System.out.println("Velocidad media (Km/h):");
+        tiempoMov =  new Scanner(System.in).nextInt();
+        if(velMedia<=0){
+            System.out.println("introduce un numero positivo");
+        }
+        }
+        Arrays.copyOf(this.retosRealizados,this.retosRealizados.length+1);
+        retosRealizados[this.retosRealizados.length-1]= new RetoRealizado(reto,fInicio,fFinal,tiempoMov,velMedia);
+        
     }
     public LocalDateTime formatoFecha(){
         
@@ -223,6 +243,18 @@ public class Usuario {
         return a;
     }
 
+    public void valorarReto(Reto reto){
+        int valoracion =0;
+        while(valoracion<=0){
+            System.out.println("Introduce la valoracion del reto(0-5):");
+            valoracion= new Scanner(System.in).nextInt();
+            if(valoracion<=0){
+                System.out.println("numero incorrecto");
+            }
+        }
+        Arrays.copyOf(this.retosValorados,this.retosValorados.length+1);
+        retosValorados[this.retosValorados.length-1]= new ValoracionDelReto(reto,valoracion);
+    }
     
     
     
