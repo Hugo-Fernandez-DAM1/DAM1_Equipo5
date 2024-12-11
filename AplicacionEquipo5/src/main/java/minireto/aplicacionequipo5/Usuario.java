@@ -74,9 +74,7 @@ public class Usuario {
         this.provincia = provincia;
     }
 
- public void registrarReto(String nombre,Usuario usuario,LocalDateTime fecha,int tipoActividad,int distancia){
-     
- }
+
 
     public void crearReto(){
         System.out.print("Nombre del reto: ");
@@ -94,7 +92,7 @@ public class Usuario {
         retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,numWP);
         realizaReto(retosCreados[this.retosCreados.length-1]);
 
-        retosCreados[this.retosCreados.length-1]= new Reto(nombre,creador,fechaHora,actividad,distancia,dificultad,numWP);
+        
 
         
         System.out.println("Quieres introducir desniveles? Y/N");
@@ -292,6 +290,18 @@ public class Usuario {
         }
         Arrays.copyOf(this.retosValorados,this.retosValorados.length+1);
         retosValorados[this.retosValorados.length-1]= new ValoracionDelReto(reto,valoracion);
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido1() {
+        return apellido1;
+    }
+
+    public String getApellido2() {
+        return apellido2;
     }
     
     
