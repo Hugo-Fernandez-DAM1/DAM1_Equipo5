@@ -22,10 +22,10 @@ public class WayPoints {
     private int longitud;
     //constructor de WayPoints
     public WayPoints(Reto reto, int numeroWaypoint) {
-        
+        System.out.println("Waypoint "+numeroWaypoint+":");
         this.reto = reto;
         this.NumeroWaypoint= numeroWaypoint;
-        System.out.println("Introduce la distancia respecto al inicio: (km)");
+        System.out.println("Introduce la distancia respecto al inicio (km): ");
         this.distanciaDesdeInicio = new Scanner(System.in).nextDouble();
         System.out.println("Introduce el tipo de wayPoint");
         this.tipo = new Scanner(System.in).nextLine();
@@ -37,11 +37,11 @@ public class WayPoints {
     // toString de WayPoints
     @Override
     public String toString() {
-        return  "Número del WayPoint: " + this.NumeroWaypoint + "\n"
-                + "Distancia desde el inicio en km: " + this.distanciaDesdeInicio + "km" + "\n"
+        return  "Numero del WayPoint: " + this.NumeroWaypoint + "\n"
+                + "Distancia desde el inicio en km: " + String.format("%,.02f",this.distanciaDesdeInicio) + "Km" + "\n"
                 + "Tipo: " + this.tipo + "\n"
-                + "Latitud en grados: " + this.latitud + "grados" + "\n"
-                + "Longitud en grados: " + this.longitud + "grados" + "\n";
+                + "Latitud en grados: " + this.latitud + " grados" + "\n"
+                + "Longitud en grados: " + this.longitud + " grados" + "\n";
     }
 
     

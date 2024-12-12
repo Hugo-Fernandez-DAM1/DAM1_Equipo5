@@ -27,6 +27,10 @@ public class RetoRealizado {
         
         //AÑADIR EN EL PRINCIPAL PEDIR COMENTARIOS OPCIONALES
     }
+
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
     
     
     
