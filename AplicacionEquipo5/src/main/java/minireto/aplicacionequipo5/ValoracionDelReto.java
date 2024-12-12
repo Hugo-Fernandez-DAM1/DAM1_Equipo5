@@ -9,17 +9,17 @@ package minireto.aplicacionequipo5;
  * @author user
  */
 public class ValoracionDelReto {
-    
+    //atributos de ValoracionDelReto
     private int valoracion;
     private Usuario valorador;
     private Reto r;
-
+    //constructor de ValoracionDelReto
     public ValoracionDelReto(Reto reto,int valoracion,Usuario valorador) {
         this.valoracion = valoracion;
         this.r = reto;
         this.valorador=valorador;
     }
-
+    //getter del reto
     public Reto getR() {
         return r;
     }

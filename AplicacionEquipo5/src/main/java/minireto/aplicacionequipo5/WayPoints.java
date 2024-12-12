@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class WayPoints {
     
-    
+    //atributos de WayPoints
     private Reto reto;
     private int NumeroWaypoint;
     private double distanciaDesdeInicio;
@@ -34,7 +34,7 @@ public class WayPoints {
         System.out.println("Introduce la longitud");
         this.longitud = new Scanner(System.in).nextInt();
     }
-    // tString de WayPoints
+    // toString de WayPoints
     @Override
     public String toString() {
         return  "Número del WayPoint: " + this.NumeroWaypoint + "\n"
