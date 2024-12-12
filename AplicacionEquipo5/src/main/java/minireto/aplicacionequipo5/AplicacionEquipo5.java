@@ -33,22 +33,11 @@ public class AplicacionEquipo5 {
             switch (num) {
 
                 case 1 -> {
-                    System.out.println(usuarios.length);
                     usuarios=Arrays.copyOf(usuarios,(int)usuarios.length+1);
-                    System.out.println(usuarios.length);
                     usuarios[usuarios.length - 1] = new Usuario();
                 }
                 case 2 -> {
-                    Usuario usuario = null;
-                    
-
-                    System.out.println("introduce nombre de usuario");
-                    String nombre = new Scanner(System.in).next();
-                    System.out.println("introduce apellido1 de usuario");
-                    String apellido1 = new Scanner(System.in).next();
-                    System.out.println("introduce apellido2 de usuario");
-                    String apellido2 = new Scanner(System.in).next();
-                    usuario=validarUsuario(nombre, apellido1, apellido2);
+                    Usuario usuario = validarUsuario();
                     if (usuario == null) {
                         System.out.println("Usuario incorrecto");
                     } else {
@@ -57,16 +46,11 @@ public class AplicacionEquipo5 {
                     }
                 }
                 case 3 -> {
-                    Usuario usuario = null;
+                    Usuario usuario = validarUsuario();
                     Reto reto= null;
                     String nomReto;
-                    System.out.println("introduce nombre de usuario");
-                    String nombre = new Scanner(System.in).next();
-                    System.out.println("introduce apellido1 de usuario");
-                    String apellido1 = new Scanner(System.in).next();
-                    System.out.println("introduce apellido2 de usuario");
-                    String apellido2 = new Scanner(System.in).next();
-                    usuario=validarUsuario(nombre, apellido1, apellido2);
+                    
+                    
                     if (usuario == null) {
                         System.out.println("Usuario incorrecto");
                     } else {
@@ -82,16 +66,8 @@ public class AplicacionEquipo5 {
 
                 }
                 case 4 -> {
-                    Usuario usuario = null;
+                    Usuario usuario = validarUsuario();
                     Reto reto = null;
-                    String nomReto;
-                    System.out.println("introduce nombre de usuario");
-                    String nombre = new Scanner(System.in).next();
-                    System.out.println("introduce apellido1 de usuario");
-                    String apellido1 = new Scanner(System.in).next();
-                    System.out.println("introduce apellido2 de usuario");
-                    String apellido2 = new Scanner(System.in).next();
-                    usuario=validarUsuario(nombre, apellido1, apellido2);
                     if (usuario == null) {
                         System.out.println("Usuario incorrecto");
                     } else {
@@ -115,10 +91,31 @@ public class AplicacionEquipo5 {
                     
                 }
                 case 6 -> {
+                    Usuario usuario = validarUsuario();
+                    if (usuario == null) {
+                        System.out.println("Usuario incorrecto");
+                    } else {
+                        for (int i = 0; i < usuario.getRetosCreados().length; i++) {
+                            System.out.println(usuario.getRetosCreados()[i]);
+                        }
+                    }
                     
 
                 }
                 case 7 -> {
+                    Reto reto=validarReto();
+                        if(reto==null){
+                            System.out.println("nombre del reto incorrecto");
+                        }
+                        else{
+                            for (int i = 0; i < usuarios.length; i++) {
+                                for (int j = 0; j < usuarios[i].getRetosValorados().length; j++) {
+                                    if(reto.getNomReto().equalsIgnoreCase(usuarios[i].getRetosValorados()[j].getR().getNomReto())){
+                                        System.out.println(usuarios[i].getRetosValorados()[j]);
+                                    }
+                                }
+                            }
+                        }
 
                 }
                 case 8 ->
@@ -129,8 +126,14 @@ public class AplicacionEquipo5 {
         } while (num != 8);
     }
 
-    public static Usuario validarUsuario(String nombre, String apellido1, String apellido2) {
+    public static Usuario validarUsuario() {
         Usuario a = null;
+                    System.out.println("introduce nombre de usuario");
+                    String nombre = new Scanner(System.in).next();
+                    System.out.println("introduce apellido1 de usuario");
+                    String apellido1 = new Scanner(System.in).next();
+                    System.out.println("introduce apellido2 de usuario");
+                    String apellido2 = new Scanner(System.in).next();
         for (int i = 0; i < usuarios.length; i++) {
             if (usuarios[i].getNombre().equalsIgnoreCase(nombre) && usuarios[i].getApellido1().equalsIgnoreCase(apellido1) && usuarios[i].getApellido2().equalsIgnoreCase(apellido2)) {
                 a = usuarios[i];

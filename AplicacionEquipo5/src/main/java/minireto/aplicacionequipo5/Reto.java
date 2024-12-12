@@ -15,7 +15,7 @@ public class Reto {
     private Usuario usuarioCreador;
     private LocalDateTime fechaHora;
     private Actividades tipoActividad;
-    private int distancia;
+    private double distancia;
     private Dificultad dificultad;
     private int numWP;
     private WayPoints[] waypoints;
@@ -28,7 +28,7 @@ public class Reto {
 
     
     //CONSTRUCTOR PARA LOS OBLIGATORIOS
-    public Reto(String nomReto, Usuario nomUsuario, LocalDateTime fechaHora, Actividades tipoActividad, int distancia, Dificultad dificultad,int numWP) {
+    public Reto(String nomReto, Usuario nomUsuario, LocalDateTime fechaHora, Actividades tipoActividad, double distancia, Dificultad dificultad,int numWP) {
         
         //Atributos obligatorios
         this.nomReto = nomReto;
@@ -37,6 +37,7 @@ public class Reto {
         this.tipoActividad = tipoActividad;
         this.distancia = distancia;
         this.dificultad = dificultad;
+        this.numWP=numWP;
         this.waypoints= new WayPoints[numWP];
         for (int i = 0; i < this.waypoints.length; i++) {
             waypoints[i]= new WayPoints(Reto.this,(i+1));

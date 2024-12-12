@@ -15,9 +15,9 @@ public class WayPoints {
     
     private Reto reto;
     private int NumeroWaypoint;
-    private int distanciaDesdeInicio;
+    private double distanciaDesdeInicio;
     private String tipo;
-   
+  
     private int latitud;
     private int longitud;
 
@@ -26,7 +26,7 @@ public class WayPoints {
         this.reto = reto;
         this.NumeroWaypoint= numeroWaypoint;
         System.out.println("Introduce la distancia respecto al inicio: (km)");
-        this.distanciaDesdeInicio = new Scanner(System.in).nextInt();
+        this.distanciaDesdeInicio = new Scanner(System.in).nextDouble();
         System.out.println("Introduce el tipo de wayPoint");
         this.tipo = new Scanner(System.in).nextLine();
         System.out.println("Introduce la latitud");

@@ -11,10 +11,25 @@ package minireto.aplicacionequipo5;
 public class ValoracionDelReto {
     
     private int valoracion;
+    private Usuario valorador;
     private Reto r;
 
-    public ValoracionDelReto(Reto reto,int valoracion) {
+    public ValoracionDelReto(Reto reto,int valoracion,Usuario valorador) {
         this.valoracion = valoracion;
-        this.r = r;
+        this.r = reto;
+        this.valorador=valorador;
     }
+
+    public Reto getR() {
+        return r;
+    }
+
+    @Override
+    public String toString() {
+        return "ValoracionDelReto{" + "valoracion=" + valoracion + ", valorador=" + valorador + ", r=" + r + '}';
+    }
+    
 }
+
+    
+

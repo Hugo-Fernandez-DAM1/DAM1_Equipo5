@@ -276,7 +276,7 @@ public class Usuario {
             }
             else{
                 retosValorados=Arrays.copyOf(this.retosValorados,this.retosValorados.length+1);
-        retosValorados[this.retosValorados.length-1]= new ValoracionDelReto(reto,valoracion);
+        retosValorados[this.retosValorados.length-1]= new ValoracionDelReto(reto,valoracion,Usuario.this);
             }
         }
         
@@ -294,6 +294,15 @@ public class Usuario {
         return apellido2;
     }
 
+    public Reto[] getRetosCreados() {
+        return retosCreados;
+    }
+
+    public ValoracionDelReto[] getRetosValorados() {
+        return retosValorados;
+    }
+
+    
     @Override
     public String toString() {
         return "Usuario{" + "retosCreados=" + retosCreados + '}';
