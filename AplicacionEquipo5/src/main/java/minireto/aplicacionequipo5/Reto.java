@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
  * @author Mario Cuevas
  */
 public class Reto {
+    //atributos del reto
     private String nomReto;
     private Usuario usuarioCreador;
     private LocalDateTime fechaHora;
@@ -47,7 +48,7 @@ public class Reto {
     
    
     }
-
+    //getters y setter necesarios
     public void setDesnivelNeg(Integer desnivelNeg) {
         this.desnivelNeg = desnivelNeg;
     }
@@ -68,10 +69,10 @@ public class Reto {
     public String getNomReto() {
         return nomReto;
     }
-
+    
     @Override
     public String toString() {
-        return "Reto{" + "nomReto=" + nomReto 
+        return "Nombre: " + nomReto 
                 + "\n, usuarioCreador=" + usuarioCreador 
                 + "\n, fechaHora=" + fechaHora 
                 + "\n, tipoActividad=" + tipoActividad 

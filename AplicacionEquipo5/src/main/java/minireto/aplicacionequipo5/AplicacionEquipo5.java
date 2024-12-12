@@ -31,11 +31,12 @@ public class AplicacionEquipo5 {
                     + "8.Salir de la aplicacion");
             num = new Scanner(System.in).nextInt();
             switch (num) {
-
+                //crear usuario
                 case 1 -> {
                     usuarios=Arrays.copyOf(usuarios,(int)usuarios.length+1);
                     usuarios[usuarios.length - 1] = new Usuario();
                 }
+                //crear un reto
                 case 2 -> {
                     Usuario usuario = validarUsuario();
                     if (usuario == null) {
@@ -45,6 +46,8 @@ public class AplicacionEquipo5 {
                         retos[retos.length-1]=usuario.crearReto();
                     }
                 }
+                
+                //realizar un reto
                 case 3 -> {
                     Usuario usuario = validarUsuario();
                     Reto reto= null;
@@ -65,6 +68,7 @@ public class AplicacionEquipo5 {
                     }
 
                 }
+                //valorar un reto
                 case 4 -> {
                     Usuario usuario = validarUsuario();
                     Reto reto = null;
@@ -82,6 +86,7 @@ public class AplicacionEquipo5 {
                     }
 
                 }
+                //ver los waypoints de un reto
                 case 5 -> {
                     Reto reto= validarReto();
                     System.out.println("Reto: "+reto.getNomReto());
@@ -90,18 +95,20 @@ public class AplicacionEquipo5 {
                     }
                     
                 }
+                //ver los retos que ha creado un usuario
                 case 6 -> {
                     Usuario usuario = validarUsuario();
                     if (usuario == null) {
                         System.out.println("Usuario incorrecto");
                     } else {
                         for (int i = 0; i < usuario.getRetosCreados().length; i++) {
-                            System.out.println(usuario.getRetosCreados()[i]);
+                            System.out.println(usuario.getRetosCreados()[i].getNomReto());
                         }
                     }
                     
-
+                 
                 }
+                //ver las valoraciones de un reto
                 case 7 -> {
                     Reto reto=validarReto();
                         if(reto==null){
@@ -118,6 +125,7 @@ public class AplicacionEquipo5 {
                         }
 
                 }
+                //salir
                 case 8 ->
                     System.out.println("!Hasta la proxima¡");
                 default ->
@@ -125,7 +133,7 @@ public class AplicacionEquipo5 {
             }
         } while (num != 8);
     }
-
+    //método para buscar y validar usuario
     public static Usuario validarUsuario() {
         Usuario a = null;
                     System.out.println("introduce nombre de usuario");
@@ -141,7 +149,7 @@ public class AplicacionEquipo5 {
         }
         return a;
     }
-
+    //método para buscar y validar un reto
     public static Reto validarReto() {
         Reto a = null;
         String nomReto="";
