@@ -279,7 +279,7 @@ public class AplicacionEquipo5 {
         }
         return a;
     }
-
+//metodo que te dice si hay valoraciones
     public static boolean validarValoraciones() {
         boolean vacio = true;
         for (int i = 0; i < usuarios.length && vacio; i++) {
