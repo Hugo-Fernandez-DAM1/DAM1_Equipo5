@@ -80,7 +80,7 @@ public class Usuario {
         System.out.print("Nombre del reto: ");
         String nombre= new Scanner(System.in).next();
         Usuario creador= Usuario.this;
-        LocalDateTime fechaHora=formatoFecha();
+        LocalDateTime fechaHora=LocalDateTime.now();
         Actividades actividad=elegirActividad();
         System.out.print("Distancia: ");
         int distancia= new Scanner(System.in).nextInt();
@@ -228,7 +228,7 @@ public class Usuario {
         int min= new Scanner(System.in).nextInt();
         System.out.println("Segundo: ");
         int seg= new Scanner(System.in).nextInt();
-        fInicio = formatoFecha(dia,mes,ano,hora,min,seg);
+        fInicio = LocalDateTime.of(ano, mes, dia, hora, min, seg);
         System.out.println("introduce la fecha final");
         System.out.println("ano: ");
         ano= new Scanner(System.in).nextInt();
@@ -243,7 +243,7 @@ public class Usuario {
         min= new Scanner(System.in).nextInt();
         System.out.println("Segundo: ");
         seg= new Scanner(System.in).nextInt();
-        fFinal = formatoFecha(dia,mes,ano,hora,min,seg);
+        fFinal = LocalDateTime.of(ano, mes, dia, hora, min, seg);
         }while(fInicio.isBefore(fFinal));
         while(tiempoMov<=0){
         System.out.println("Tiempo en movimiento (minutos):");
@@ -265,15 +265,15 @@ public class Usuario {
     }
     public LocalDateTime formatoFecha(){
         
-        DateTimeFormatter f =DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy 'a las' hh:mm:ss\"");
+        DateTimeFormatter f =DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy 'a las' hh:mm:ss");
         LocalDateTime a =LocalDateTime.parse(LocalDateTime.now().format(f));
         
         return a;
     }
     public LocalDateTime formatoFecha(int dia,int mes ,int ano,int hora,int min,int seg){
-        DateTimeFormatter f =DateTimeFormatter.ofPattern("dd-MM-yyyy a las hh:mm:ss");
-        LocalDateTime fecha = LocalDateTime.of(seg, min, min, hora, min, seg);
-        LocalDateTime a =LocalDateTime.parse(LocalDateTime.of(seg, min, min, hora, min, seg).format(f));
+        DateTimeFormatter f =DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy 'a las' hh:mm:ss");
+        LocalDateTime a =LocalDateTime.of(ano, mes, dia, hora, min, seg);
+        a = LocalDateTime.parse(a.toString(),f);
         return a;
     }
 

@@ -4,6 +4,8 @@
  */
 package minireto.aplicacionequipo5;
 
+import java.util.Scanner;
+
 /**
  *
  * @author DAM119
@@ -15,19 +17,22 @@ public class WayPoints {
     private int NumeroWaypoint;
     private int distanciaDesdeInicio;
     private String tipo;
-    private String nombre;
+   
     private int latitud;
     private int longitud;
 
-    public WayPoints(int id, Reto reto, int NumeroWaypoint, int distanciaInicio, String tipo, String nombre, int latitud, int longitud, String foto) {
+    public WayPoints(Reto reto, int numeroWaypoint) {
         
         this.reto = reto;
-        this.NumeroWaypoint = NumeroWaypoint;
-        this.distanciaDesdeInicio = distanciaInicio;
-        this.tipo = tipo;
-        this.nombre = nombre;
-        this.latitud = latitud;
-        this.longitud = longitud;
+        this.NumeroWaypoint= numeroWaypoint;
+        System.out.println("Introduce la distancia respecto al inicio: (km)");
+        this.distanciaDesdeInicio = new Scanner(System.in).nextInt();
+        System.out.println("Introduce el tipo de wayPoint");
+        this.tipo = new Scanner(System.in).nextLine();
+        System.out.println("Introduce la latitud");
+        this.latitud = new Scanner(System.in).nextInt();
+        System.out.println("Introduce la longitud");
+        this.longitud = new Scanner(System.in).nextInt();
     }
 
     
