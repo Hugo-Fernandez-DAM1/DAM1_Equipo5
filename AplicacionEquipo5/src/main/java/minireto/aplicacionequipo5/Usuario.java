@@ -59,6 +59,7 @@ public class Usuario {
         this.fechaNac = LocalDate.of(ano,mes,dia);
         this.retosRealizados= new RetoRealizado[0];
         this.retosCreados = new Reto[0];
+        this.retosValorados= new ValoracionDelReto[0];
     }
 
 
@@ -214,37 +215,10 @@ public class Usuario {
         int tiempoMov=0;
         int velMedia=0;
         do{
-            System.out.println("introduce la fecha de inicio");
-        System.out.println("ano: ");
-        int ano= new Scanner(System.in).nextInt();
-        System.out.println("mes: ");
-        int mes= new Scanner(System.in).nextInt();
-        System.out.println("dia: ");
-        int dia= new Scanner(System.in).nextInt();
-        System.out.println("Introduce la hora de inicio: ");
-        System.out.println("Hora: ");
-        int hora= new Scanner(System.in).nextInt();
-        System.out.println("Minuto: ");
-        int min= new Scanner(System.in).nextInt();
-        System.out.println("Segundo: ");
-        int seg= new Scanner(System.in).nextInt();
-        fInicio = LocalDateTime.of(ano, mes, dia, hora, min, seg);
-        System.out.println("introduce la fecha final");
-        System.out.println("ano: ");
-        ano= new Scanner(System.in).nextInt();
-        System.out.println("mes: ");
-        mes= new Scanner(System.in).nextInt();
-        System.out.println("dia: ");
-        dia= new Scanner(System.in).nextInt();
-        System.out.println("Introduce la hora final: ");
-        System.out.println("Hora: ");
-        hora= new Scanner(System.in).nextInt();
-        System.out.println("Minuto: ");
-        min= new Scanner(System.in).nextInt();
-        System.out.println("Segundo: ");
-        seg= new Scanner(System.in).nextInt();
-        fFinal = LocalDateTime.of(ano, mes, dia, hora, min, seg);
-        }while(fInicio.isBefore(fFinal));
+        
+        fInicio = fecha("introduce la fecha y hora de inicio");
+        fFinal = fecha("introduce la fecha y hora final");
+        }while(fInicio.isAfter(fFinal));
         while(tiempoMov<=0){
         System.out.println("Tiempo en movimiento (minutos):");
         tiempoMov =  new Scanner(System.in).nextInt();
@@ -254,7 +228,7 @@ public class Usuario {
         }
         while(velMedia<=0){
         System.out.println("Velocidad media (Km/h):");
-        tiempoMov =  new Scanner(System.in).nextInt();
+        velMedia =  new Scanner(System.in).nextInt();
         if(velMedia<=0){
             System.out.println("introduce un numero positivo");
         }
@@ -263,18 +237,33 @@ public class Usuario {
         retosRealizados[this.retosRealizados.length-1]= new RetoRealizado(reto,fInicio,fFinal,tiempoMov,velMedia);
         
     }
-    public LocalDateTime formatoFecha(){
-        
-        DateTimeFormatter f =DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy 'a las' hh:mm:ss");
-        LocalDateTime a =LocalDateTime.parse(LocalDateTime.now().format(f));
-        
-        return a;
+    public LocalDateTime fecha(String msj){
+        System.out.println(msj);
+        System.out.println("ano: ");
+        int ano= new Scanner(System.in).nextInt();
+        System.out.println("mes: ");
+        int mes= new Scanner(System.in).nextInt();
+        System.out.println("dia: ");
+        int dia= new Scanner(System.in).nextInt();
+        System.out.println("Hora: ");
+        int hora= new Scanner(System.in).nextInt();
+        System.out.println("Minuto: ");
+        int min= new Scanner(System.in).nextInt();
+        System.out.println("Segundo: ");
+        int seg= new Scanner(System.in).nextInt();
+        return LocalDateTime.of(ano, mes, dia, hora, min, seg);
     }
-    public LocalDateTime formatoFecha(int dia,int mes ,int ano,int hora,int min,int seg){
+    public String formatoFecha(){
+        
         DateTimeFormatter f =DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy 'a las' hh:mm:ss");
-        LocalDateTime a =LocalDateTime.of(ano, mes, dia, hora, min, seg);
-        a = LocalDateTime.parse(a.toString(),f);
-        return a;
+        
+        return String.valueOf(LocalDateTime.parse(LocalDateTime.now().format(f)));
+    }
+    public String formatoFecha(LocalDateTime fecha){
+        DateTimeFormatter f =DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy 'a las' hh:mm:ss");
+        LocalDateTime a =fecha;
+        
+        return String.valueOf(LocalDateTime.parse(fecha.format(f)));
     }
 
     public void valorarReto(Reto reto){
@@ -285,9 +274,12 @@ public class Usuario {
             if(valoracion<=0){
                 System.out.println("numero incorrecto");
             }
-        }
-        retosValorados=Arrays.copyOf(this.retosValorados,this.retosValorados.length+1);
+            else{
+                retosValorados=Arrays.copyOf(this.retosValorados,this.retosValorados.length+1);
         retosValorados[this.retosValorados.length-1]= new ValoracionDelReto(reto,valoracion);
+            }
+        }
+        
     }
 
     public String getNombre() {
@@ -300,6 +292,11 @@ public class Usuario {
 
     public String getApellido2() {
         return apellido2;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "retosCreados=" + retosCreados + '}';
     }
     
     

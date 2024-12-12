@@ -35,6 +35,11 @@ public class WayPoints {
         this.longitud = new Scanner(System.in).nextInt();
     }
 
+    @Override
+    public String toString() {
+        return "WayPoints{" + "NumeroWaypoint=" + NumeroWaypoint + " distanciaDesdeInicio=" + distanciaDesdeInicio + " tipo=" + tipo + " latitud=" + latitud + " longitud=" + longitud + '}';
+    }
+
     
 
 }

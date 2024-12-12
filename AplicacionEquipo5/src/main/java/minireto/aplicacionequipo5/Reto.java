@@ -67,14 +67,6 @@ public class Reto {
     public String getNomReto() {
         return nomReto;
     }
-    
-    public void agregarWaypoint(WayPoints waypoint, int i) {
-        if (i >= 0 && i < waypoints.length) {
-            waypoints[i] = waypoint;
-        } else {
-            System.out.println("Índice fuera de rango.");
-        }
-    }
 
     @Override
     public String toString() {
@@ -90,6 +82,10 @@ public class Reto {
                 + "\n, desnivelPos=" + desnivelPos 
                 + "\n, periodo=" + periodo 
                 + "\n, comentario=" + comentario + '}';
+    }
+
+    public WayPoints[] getWaypoints() {
+        return waypoints;
     }
     
     

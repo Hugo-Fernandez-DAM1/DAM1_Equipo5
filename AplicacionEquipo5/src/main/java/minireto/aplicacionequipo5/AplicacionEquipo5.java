@@ -70,9 +70,7 @@ public class AplicacionEquipo5 {
                     if (usuario == null) {
                         System.out.println("Usuario incorrecto");
                     } else {
-                        
-                        nomReto = new Scanner(System.in).nextLine();
-                        reto=validarReto(nomReto);
+                        reto=validarReto();
                         if(reto==null){
                             System.out.println("nombre del reto incorrecto");
                         }
@@ -97,8 +95,7 @@ public class AplicacionEquipo5 {
                     if (usuario == null) {
                         System.out.println("Usuario incorrecto");
                     } else {
-                      nomReto = new Scanner(System.in).nextLine();
-                        reto=validarReto(nomReto);
+                        reto=validarReto();
                         if(reto==null){
                             System.out.println("nombre del reto incorrecto");
                         }
@@ -110,9 +107,15 @@ public class AplicacionEquipo5 {
 
                 }
                 case 5 -> {
-
+                    Reto reto= validarReto();
+                    System.out.println("Reto: "+reto.getNomReto());
+                    for (int i = 0; i < reto.getWaypoints().length; i++) {
+                        System.out.println(reto.getWaypoints()[i]);
+                    }
+                    
                 }
                 case 6 -> {
+                    
 
                 }
                 case 7 -> {
@@ -136,8 +139,15 @@ public class AplicacionEquipo5 {
         return a;
     }
 
-    public static Reto validarReto(String nomReto) {
+    public static Reto validarReto() {
         Reto a = null;
+        String nomReto="";
+        System.out.println("---Retos---");
+        for (int i = 0; i < retos.length; i++) {
+            System.out.println(retos[i].getNomReto());
+        }
+        System.out.println("Introduce el nombre del reto:");
+        nomReto = new Scanner(System.in).nextLine();
         for (int i = 0; i < retos.length; i++) {
             if (nomReto.equalsIgnoreCase(retos[i].getNomReto())) {
                 a = retos[i];
