@@ -89,6 +89,10 @@ public class Reto {
     public WayPoints[] getWaypoints() {
         return waypoints;
     }
+
+    public double getDistancia() {
+        return distancia;
+    }
     
     
     

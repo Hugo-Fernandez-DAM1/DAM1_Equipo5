@@ -25,8 +25,14 @@ public class WayPoints {
         System.out.println("Waypoint "+numeroWaypoint+":");
         this.reto = reto;
         this.NumeroWaypoint= numeroWaypoint;
-        System.out.println("Introduce la distancia respecto al inicio (km): ");
+        do{
+            System.out.println("Introduce la distancia respecto al inicio (km): ");
         this.distanciaDesdeInicio = new Scanner(System.in).nextDouble();
+        if(this.distanciaDesdeInicio>=this.reto.getDistancia()){
+            System.out.println("El numero introducido no puede ser igual o mayor a la distancia total");
+        }
+        }while(this.distanciaDesdeInicio>=this.reto.getDistancia());
+        
         System.out.println("Introduce el tipo de wayPoint");
         this.tipo = new Scanner(System.in).nextLine();
         System.out.println("Introduce la latitud");

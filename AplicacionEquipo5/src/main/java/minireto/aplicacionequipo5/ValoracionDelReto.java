@@ -26,7 +26,7 @@ public class ValoracionDelReto {
     //toString de ValoraciónDelReto
     @Override
     public String toString() {
-        return "Usuario: " + this.valorador.getNombre() + this.valorador.getApellido1() + this.valorador.getApellido2() + "\n"
+        return "Usuario: " + this.valorador.getNombre() +" "+ this.valorador.getApellido1() +" "+this.valorador.getApellido2()+" "+ "\n"
                 + "Valoración: " + this.valoracion;
     }
     

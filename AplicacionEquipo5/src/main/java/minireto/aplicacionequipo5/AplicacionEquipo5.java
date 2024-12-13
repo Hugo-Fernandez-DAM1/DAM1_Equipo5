@@ -283,9 +283,9 @@ public class AplicacionEquipo5 {
     public static boolean validarValoraciones() {
         boolean vacio = true;
         for (int i = 0; i < usuarios.length && vacio; i++) {
-            if (usuarios[i].getRetosValorados() != null) {
-                vacio = false;
-            }
+           if(usuarios[i].getRetosValorados().length!=0){
+               vacio=false;
+           }
         }
         return vacio;
     }
